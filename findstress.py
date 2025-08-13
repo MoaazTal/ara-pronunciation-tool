@@ -1,7 +1,7 @@
 def find_stress_index(sequence):  # Find stress syllable in word starting from "start"
     if sequence == u'' or len(sequence) == 0:
         return -1
-    print(sequence)
+    #print(sequence)
     consonants = [
         "r", "g", "y", "G",
         "b", "z", "f", "v",
@@ -44,7 +44,7 @@ def find_stress_index(sequence):  # Find stress syllable in word starting from "
         elif (sequence[i] in shortVowels):
             syllableString += "v"
         else:
-            print('Unacceptable char when finding stress syllable: ' + sequence[i] + ' ' + syllableString + '\n')
+            #print('Unacceptable char when finding stress syllable: ' + sequence[i] + ' ' + syllableString + '\n')
             file = open("errors", "a")
             file.write(sequence[i])
             file.write("\n")

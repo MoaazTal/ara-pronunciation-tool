@@ -38,7 +38,7 @@ def corpus2dictionary(corpus, project_name):
                 for pronunciation in pronunciations:
                     pronunciation_dict[clean_word].add(pronunciation)
 
-    print('writing dic file')
+    #print('writing dic file')
     with open(proj_name + '.dic', mode='w', encoding='utf-8') as dict_writer:
         for w, phones in sorted(pronunciation_dict.items()):
             for i, phone in enumerate(phones):
@@ -47,7 +47,7 @@ def corpus2dictionary(corpus, project_name):
                 else:
                     dict_writer.write('{}({})\t\t{}\n'.format(w, (i + 1), phone))
 
-    print('writing phone file')
+    #print('writing phone file')
     with open(proj_name + '.phone', mode='w', encoding='utf-8') as phone_writer:
         for ph in sorted(phones_list):
             phone_writer.write(ph)

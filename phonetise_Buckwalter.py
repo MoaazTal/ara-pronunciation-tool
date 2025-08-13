@@ -376,7 +376,7 @@ if __name__ == '__main__':
     try:
         inputFileName = sys.argv[1]
     except:
-        print("No input file provided")
+        #print("No input file provided")
         sys.exit()
 
     inputFile = open(inputFileName, mode='r', encoding='utf-8')
@@ -397,7 +397,7 @@ if __name__ == '__main__':
             utterance = " ".join(utterance.split(' "')[1:]).strip(
                 '"').rstrip()  # Split line and get the orthography from the second part
         except:
-            print("Format Error in utterance number " + str(utteranceNumber))
+            #print("Format Error in utterance number " + str(utteranceNumber))
             sys.exit()
 
         utteranceNumber += 1
@@ -425,7 +425,7 @@ if __name__ == '__main__':
         utterance = re.sub(u' >([^auAw ])', u' >a\\1', utterance)
         utterance = re.sub(u'<([^i])', u'<i\\1', utterance)
         if utteranceNumber < 3:
-            print(utterance)
+            #print(utterance)
         # ---------------------------
         wordIndex = -1
 

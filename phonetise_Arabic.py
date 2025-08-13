@@ -265,8 +265,8 @@ def phonetise(text):
             '')  # Add empty entry that will hold this utterance's pronuncation
 
         utterance = arabicToBuckwalter(utterance)
-        print(u"phoetising utterance")
-        print(utterance)
+        #print(u"phoetising utterance")
+        #print(utterance)
         # Do some normalisation work and split utterance to words
         utterance = utterance.replace(u'AF', u'F')
         utterance = utterance.replace(u'\u0640', u'')
@@ -496,8 +496,8 @@ def phonetise(text):
                         pronunciation[stressIndex] += u'\''
                     else:
                         if pIndex == 0:
-                            print('skipped')
-                            print(pronunciation)
+                            #print('skipped')
+                            #print(pronunciation)
                     pIndex += 1
                 # Append utterance pronunciation to utterancesPronunciations
                 utterances_pronunciations_with_boundaries[-1] += u" " + u"".join(pronunciations[0])
@@ -530,8 +530,8 @@ def phonetise_word(arabic_word):
         utterances_pronunciations_with_boundaries.append('')
 
         utterance = arabicToBuckwalter(utterance)
-        # print(u"phoetising utterance")
-        # print(utterance)
+        # #print(u"phoetising utterance")
+        # #print(utterance)
         # Do some normalisation work and split utterance to words
         utterance = utterance.replace(u'AF', u'F')
         utterance = utterance.replace(u'\u0640', u'')
@@ -764,8 +764,8 @@ def phonetise_word(arabic_word):
                         pronunciation[stressIndex] += u'\''
                     else:
                         if pIndex == 0:
-                            # print('skipped')
-                            # print(pronunciation)
+                            # #print('skipped')
+                            # #print(pronunciation)
                             pass
                     pIndex += 1
                 # Append utterance pronunciation to utterancesPronunciations
@@ -805,23 +805,23 @@ if __name__ == '__main__':
     file_prefix, ext = args.input.name.split('.')
     file_prefix = file_prefix
     # Save Utterances pronunciations
-    print('Save Utterances pronunciations')
+    #print('Save Utterances pronunciations')
     outFile = open(file_prefix + '-utterance-pronunciations.txt', mode='w', encoding='utf-8')
     outFile.write(u"\n".join(utterancesPronuncations))
     outFile.close()
     # Save Utterances pronunciations (with wordboundaries)
-    print('Save Utterances pronunciations (with wordboundaries)')
+    #print('Save Utterances pronunciations (with wordboundaries)')
     outFile = open(file_prefix + '-utterance-pronunciations-with-boundaries.txt', mode='w', encoding='utf-8')
     outFile.write(u"\n".join(utterancesPronuncationsWithBoundaries))
     outFile.close()
 
     # Save Pronunciation Dictionary
-    print('Save Pronunciation Dictionary')
+    #print('Save Pronunciation Dictionary')
     outFile = open(file_prefix + '.dict', mode='w', encoding='utf-8')
     outFile.write(dict.rstrip())
     outFile.close()
 
     # Sort Dictionary
-    print('Sort Dictionary')
+    #print('Sort Dictionary')
     os.system("python sortandfilter.py {}.dict".format(file_prefix))
-    print('done!')
+    #print('done!')
