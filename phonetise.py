@@ -165,7 +165,7 @@ for utterance in utterances:
     utterance = re.sub(u' \u0623([^\u064e\u064f\u0627\u0648 ])', u' \u0623\u064e\\1', utterance)
     utterance = re.sub(u'\u0625([^\u0650])', u'\u0625\u0650\\1', utterance)
     if number < 3:
-        print(utterance)
+        #print(utterance)
 
     utterance = utterance.split(u' ')
 
