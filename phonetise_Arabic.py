@@ -498,6 +498,7 @@ def phonetise(text):
                         if pIndex == 0:
                             #print('skipped')
                             #print(pronunciation)
+                            pass
                     pIndex += 1
                 # Append utterance pronunciation to utterancesPronunciations
                 utterances_pronunciations_with_boundaries[-1] += u" " + u"".join(pronunciations[0])
